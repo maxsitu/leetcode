@@ -11,4 +11,10 @@ public class ListNode {
         val = x;
         next = null;
     }
+
+    public ListNode follow(int prev) {
+        ListNode prevNode = new ListNode(prev);
+        prevNode.next = this;
+        return prevNode;
+    }
 }
