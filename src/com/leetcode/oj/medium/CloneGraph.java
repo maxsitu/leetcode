@@ -9,6 +9,9 @@ import java.util.Map;
  * Created by appleowner on 2/15/15.
  */
 public class CloneGraph {
+    /**
+     * @param node a starting node of given graph.
+     */
     public UndirectedGraphNode cloneGraph(UndirectedGraphNode node) {
         if (node == null) return null;
         Map<UndirectedGraphNode, UndirectedGraphNode> map = new HashMap<UndirectedGraphNode, UndirectedGraphNode>();
