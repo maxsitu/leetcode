@@ -11,4 +11,16 @@ public class TreeNode {
     public TreeNode(int x) {
         val = x;
     }
+
+    public TreeNode addToRight(int pVal) {
+        TreeNode parent = new TreeNode(pVal);
+        parent.right = this;
+        return parent;
+    }
+
+    public TreeNode addToLeft(int pVal) {
+        TreeNode parent = new TreeNode(pVal);
+        parent.left = this;
+        return parent;
+    }
 }
