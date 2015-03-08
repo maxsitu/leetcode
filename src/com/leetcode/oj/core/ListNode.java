@@ -12,6 +12,15 @@ public class ListNode {
         next = null;
     }
 
+    public static void traversePrint(ListNode p) {
+        ListNode head = p;
+        while (head != null) {
+            System.out.format("%d->", head.val);
+            head = head.next;
+        }
+        System.out.println(head);
+    }
+
     public ListNode follow(int prev) {
         ListNode prevNode = new ListNode(prev);
         prevNode.next = this;
