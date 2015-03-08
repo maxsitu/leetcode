@@ -17,4 +17,9 @@ public class ListNode {
         prevNode.next = this;
         return prevNode;
     }
+
+    @Override
+    public String toString() {
+        return "" + this.val;
+    }
 }
