@@ -45,6 +45,30 @@ public class FourSum {
         return list;
     }
 
+    public List<List<Integer>> fourSum2(int[] num, int target) {
+        List<List<Integer>> res = new ArrayList<List<Integer>>();
+        Arrays.sort(num);
+        for (int i = 0; i < num.length - 3; i++) {
+            for (int j = i + 1; j < num.length - 2; j++) {
+                int lo = j + 1, hi = num.length - 1;
+                while (lo < hi) {
+                    int val = num[i] + num[j] + num[lo] + num[hi];
+                    if (val == target) {
+                        res.add(Arrays.asList(num[i], num[j], num[lo], num[hi]));
+                        while (lo < hi && num[lo] == num[lo + 1]) lo++;
+                        while (lo < hi && num[hi] == num[hi - 1]) hi--;
+                        lo++;
+                        hi--;
+                    } else if (val < target) lo++;
+                    else hi--;
+                }
+                while (j < num.length - 2 && num[j] == num[j + 1]) j++;
+            }
+            while (i < num.length - 3 && num[i] == num[i + 1]) i++;
+        }
+        return res;
+    }
+
     public static void main(String[] args) {
         int[] a = new int[]{1, -2, -5, -4, -3, 3, 3, 5};
         int target = -11;
